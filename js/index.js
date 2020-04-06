@@ -92,8 +92,16 @@ const setContactSectionContent = () => {
   contactArray.forEach((content, index) => contactContent[index].textContent = content);
 }
 
+const setFooterContent = () => {
+  const footerContent = document.querySelector("footer p");
+  const copyrightText = siteContent.footer.copyright;
+
+  footerContent.textContent = copyrightText;
+}
+
 
 setNavLinkContent();
 setCtaSectionContent();
 setMainSectionContent();
 setContactSectionContent();
+setFooterContent();
