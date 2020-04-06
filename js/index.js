@@ -41,6 +41,16 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
+const body = document.querySelector("body");
+const container = document.querySelector(".container");
+
+// STRETCH
+body.style.backgroundColor = "azure";
+body.style.padding = "0 30px";
+container.style.margin = "0 auto";
+container.style.maxWidth = "100%";
+
+
 const createLinkTag = (linkName, href) => {
   const node = document.createElement("A");
   const nodeName = document.createTextNode(linkName);
@@ -79,6 +89,10 @@ const setCtaSectionContent = () => {
   ctaHeading.textContent = siteContent.cta.h1;
   ctaButton.textContent = siteContent.cta.button;
   ctaImage.setAttribute("src", siteContent.cta["img-src"]);
+
+  ctaButton.addEventListener("click", () => {
+    ctaImage.classList.toggle("hidden");
+  });
 }
 
 // MAIN SECTION
