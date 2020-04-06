@@ -61,6 +61,30 @@ const setCtaSectionContent = () => {
   ctaImage.setAttribute("src", siteContent.cta["img-src"]);
 }
 
+// MAIN SECTION
+const setMainSectionContent = () => {
+  const textContentArray = Object.values(siteContent["main-content"]);
+  const headings = document.querySelectorAll(".main-content h4");
+  const paragraphs = document.querySelectorAll(".main-content p");
+  const headingsAndParagraphs = [];
+  const middleImage = document.querySelector(".main-content .middle-img");
+
+  // Remove the image source value from the textContentarray and store it in this variable
+  const middleImageSrc = textContentArray.splice(4, 1);
+  
+  middleImage.setAttribute("src", middleImageSrc);
+
+  for(let i = 0; i < textContentArray.length; i++) {
+    headingsAndParagraphs.push(headings[i]);
+    headingsAndParagraphs.push(paragraphs[i]);
+  }
+
+  textContentArray.forEach((content, index) => {
+    headingsAndParagraphs[index].textContent = content;
+  })
+}
+
 
 setNavLinkContent();
 setCtaSectionContent();
+setMainSectionContent();
