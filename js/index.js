@@ -50,5 +50,17 @@ const setNavLinkContent = () => {
   return navLinks;
 }
 
+// CTA
+const setCtaSectionContent = () => {
+  const ctaHeading = document.querySelector(".cta .cta-text h1");
+  const ctaButton = document.querySelector(".cta .cta-text button");
+  const ctaImage = document.querySelector(".cta #cta-img");
+
+  ctaHeading.textContent = siteContent.cta.h1;
+  ctaButton.textContent = siteContent.cta.button;
+  ctaImage.setAttribute("src", siteContent.cta["img-src"]);
+}
+
 
 setNavLinkContent();
+setCtaSectionContent();
