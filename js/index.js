@@ -41,10 +41,27 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
+const createLinkTag = (linkName, href) => {
+  const node = document.createElement("A");
+  const nodeName = document.createTextNode(linkName);
+
+  node.appendChild(nodeName);
+  node.setAttribute("href", href);
+  node.style.color = "green";
+
+  return node;
+}
+
 // NAV
 const setNavLinkContent = () => {
   const navContent = Object.values(siteContent.nav);
+  const nav = document.querySelector("header nav");
   const navLinks = document.querySelectorAll("header nav a");
+  nav.appendChild(createLinkTag("Foo", "#"));
+  nav.appendChild(createLinkTag("Bar", "#"));
+
+  console.log(nav);
+
   navLinks.forEach((link, index) => {
     link.style.color = "green";
     link.textContent = navContent[index]
