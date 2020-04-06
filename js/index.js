@@ -45,7 +45,10 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 const setNavLinkContent = () => {
   const navContent = Object.values(siteContent.nav);
   const navLinks = document.querySelectorAll("header nav a");
-  navLinks.forEach((link, index) => link.textContent = navContent[index]);
+  navLinks.forEach((link, index) => {
+    link.style.color = "green";
+    link.textContent = navContent[index]
+  });
 
   return navLinks;
 }
