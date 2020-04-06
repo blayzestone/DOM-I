@@ -84,7 +84,16 @@ const setMainSectionContent = () => {
   })
 }
 
+// FOOTER
+const setContactSectionContent = () => {
+  const contactContent = document.querySelector(".contact").children;
+  const contactArray = Object.values(siteContent.contact);
+
+  contactArray.forEach((content, index) => contactContent[index].textContent = content);
+}
+
 
 setNavLinkContent();
 setCtaSectionContent();
 setMainSectionContent();
+setContactSectionContent();
